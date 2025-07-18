@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!GLOBAL_CONFIG.isPhotoFigcaption) return
     document.querySelectorAll('#article-container img').forEach(item => {
       const altValue = item.title || item.alt
+      item.setAttribute('aria-hidden', 'true')
       if (!altValue) return
       const ele = document.createElement('div')
       ele.className = 'img-alt text-center'
