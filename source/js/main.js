@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const addPhotoFigcaption = () => {
     if (!GLOBAL_CONFIG.isPhotoFigcaption) return
-    document.querySelectorAll('#article-container img').forEach(item => {
+    document.querySelectorAll('#article-container img:not(.inline-img)').forEach(item => {
       const altValue = item.title || item.alt
       item.setAttribute('aria-hidden', 'true')
       if (!altValue) return
